@@ -1,0 +1,23 @@
+# binaries
+*.exe
+*.exe~
+*.dll
+
+
+# test
+*.test
+
+# output
+bin/
+dist/
+
+# environment
+.env
+
+# logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
