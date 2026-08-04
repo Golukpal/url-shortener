@@ -1,23 +1,23 @@
-version : "3.9"
+version: "3.9"
 
 services:
-  
+
   postgres:
-    image: posstgres:17-alpine
-    container_name: url-shrtener-db
+    image: postgres:17-alpine
+    container_name: url-shortener-db
 
-    restart: always
+    restart: unless-stopped
 
-    enviroment:
+    environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: url_shortener
 
     ports:
       - "5432:5432"
-    
+
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
 
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
@@ -26,4 +26,4 @@ services:
       timeout: 5s
 
 volumes:
-  postgres_data:
+  postgres-data:
