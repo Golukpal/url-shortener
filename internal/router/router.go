@@ -3,7 +3,7 @@ package router
 import (
 	"net/http"
 
-	"url-shortener/internal/app"
+	"github.com/Golukpal/url-shortener/internal/app"
 
 	"github.com/gin-gonic/gin"
 )
