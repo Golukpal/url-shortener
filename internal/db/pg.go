@@ -10,11 +10,11 @@ import (
 
 
 
-func Connect(cfg *config.Config) (*pgxpool.Pool, error) {
+func ConnectDB(cfg *config.Config) (*pgxpool.Pool, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	return pgxpool.New(
+	return pgxpool.Connect(
 		ctx,
 		cfg.DatabaseURL(),
 	)
